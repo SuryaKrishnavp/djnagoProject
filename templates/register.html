@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #21D4FD;
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            height: 100vh;
+        }
+        .boxzz{
+            width: 550px;
+            height: 620px;
+            text-align: center;
+            margin: auto;
+            border-radius: 20px;
+            background-color: whitesmoke;
+        }
+        #inputreg{
+
+            width: 400px;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: Cambria;
+        }
+        @media only screen and (max-width:600px){
+            .boxzz{
+                width: 400px;
+            }
+            
+        }
+    </style>
+</head>
+<body><br>
+    <div class="boxzz"><br>
+        <h1 style="font-family: serif;font-weight: bolder;letter-spacing: 2px;text-shadow:2px 2px red;">SIGN UP</h1>
+        <p>It's quick and easy</p>
+        {% if messages %}
+        {% for i in messages %}
+        <h6 style="color: red;"> {{i}} </h6>
+        {% endfor %}
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input id="inputreg" type="text" name="name" placeholder="ENTER YOUR NAME" ><br><br>
+            <input id="inputreg" type="email" name="email" placeholder="ENTER YOUR EMAIL ID" ><br><br>
+            <input id="inputreg" type="text" name="phonenumber" placeholder="ENTER YOUR PHONE NUMBER" ><br><br>
+            <input id="inputreg" type="password" name="password" placeholder="ENTER PASSWORD" ><br><br>
+            <input type="password" id="inputreg" name="conformpassword" placeholder="CONFORM PASSWORD" ><br><br>
+            <p style="font-size: 13px;">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
+
+            </p>
+            <input type="submit" value="SIGN UP" style="width: 300px;height: 40px;border-radius: 5px;text-align: center;letter-spacing: 2px;font-family: Cambria;background-color: rgb(17, 173, 17);color: white;">
+        </form><br>
+        <a href="/ "><button style="text-align: center;width: 150px;height: 40px;background-color: blue;">BACK</button></a>
+    </div>
+    
+</body>
+</html>

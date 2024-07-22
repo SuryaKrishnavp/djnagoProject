@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br><br><br><br>
+    <h3 style="font-family: serif;font-weight: bold;text-align: center;">RECOVER YOUR PASSWORD!</h3>
+    {% if messages %}
+    {% for i in messages %}
+    <h5 style="font-family: serif;font-weight: bold;color: red;text-align: center;"> {{i}}</h5>
+    {% endfor %}
+    {% endif %}
+
+    <div class="box" style="width: 400px; height: 150px;background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);    
+    margin: auto;border-radius: 20px;text-align: center;border: 2px solid black;box-shadow:4px 4px black;"><br><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="ENTER YOUR EMAIL ID" style="width: 300px;height: 40px;border-radius: 5px;"><br><br>
+            <input type="submit" value="GET" style="width: 150px;height: 40px;font-size: medium;border-radius: 5px;background-color: blue;color: white;">
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxi{
+            width: 520px;
+            height: 520px;
+            text-align: center;
+            margin: auto;
+            border: 2px solid black;
+            background-color: aliceblue;
+            border-radius: 20px;
+            box-shadow: 2px 2px black;
+        }
+        #inputi{
+            width: 400px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        #click{
+            width: 400px;
+            height: 40px;
+            background-color: green;
+            color: aliceblue;
+            border-radius: 15px;
+        }
+        @media only screen and (max-width:600px){
+            .boxi{
+                width: 400px;
+                height: 550px;
+            }
+            #inputi{
+                width: 340px;
+            }
+            #click{
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+<body style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);height: 100vh;">
+
+    
+    <h2 style="font-family: 'Trebuchet MS';text-align: center;">WELCOME {{user.Name}}</h2>
+    <p style="text-align: center;color:white;">YOU CAN ADD YOUR DAILY TO-DO LIST HERE!</p>
+    
+
+    <div class="boxi" ><br>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="" style="font-family: 'Gill Sans';font-weight: bolder;font-size: medium;">NAME :</label>
+            <input  type="text" name="user" value="{{user.Name}}" style="letter-spacing: 2px;font-size: medium; background-color: #ebedee; width: 335px;height: 40px;font-family: 'Gill Sans';border-radius: 5px;"><br><br>
+            <input id="inputi" type="text" name="activity" placeholder="ENTER YOUR ACTIVITY" ><br><br>
+        
+            <input id="inputi" type="text" name="date" placeholder="DATE  (DD/MM/YYYY)" ><br><br>
+            <input id="inputi" type="text" name="time" placeholder="TIME (HH:MM)" ><br><br>
+            
+            <input id="inputi" type="text" name="priority" placeholder="ENTER PRIORITY" ><br><br><br>
+            <label for="" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bolder;border-radius: 5px;">Upload Related Document: </label>
+            <input type="file" name="image" style="width: 190px;"><br><br>
+            <input type="submit" value="SUBMIT" style="width: 200px; height: 40px; background-color: blue;color: white;border-radius: 10px;"><br><br><br>
+        </form>
+        <a href="read"><button id="click" >CLICK TO VIEW</button></a>
+    </div>
+</body>
+</html>
